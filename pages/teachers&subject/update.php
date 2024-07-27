@@ -37,22 +37,8 @@ if($result->num_rows > 0){
 
 <section id="content">
     <main>
-        <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
-        <div class="alert alert-success" role="alert">
-             Update successfully! <a href="manage.php">view</a>
-        </div>
-        <script>
-            $(document).ready(function() {
-                $(".alert-success").fadeTo(2000, 500).slideUp(500, function() {
-                    $(this).slideUp(500);
-                });
-            });
-        </script>
-        <?php endif; ?>
-<?php
 
-?>
-        <form action="update_process.php" method="POST" id="studentForm" class="hide-scrollbar">
+        <form action="../../include/a_u_d/update.php" method="POST" id="studentForm" class="hide-scrollbar">
             <div class="form-group" style="display:none;">
                 <label for="subject_id">Subject ID:</label>
                 <input type="text" class="form-control" id="subject_id" name="subject_id" value="<?php echo htmlspecialchars($row['subject_id']); ?>" readonly>
@@ -83,7 +69,7 @@ if($result->num_rows > 0){
             </div> -->
          
             <br>
-            <button type="submit" name="add" class="btn btn-primary" id="add">Update</button>
+            <button type="submit" name="update_subject_teacher" class="btn btn-primary" id="add">Update</button>
         </form>
     </main>
 </section>

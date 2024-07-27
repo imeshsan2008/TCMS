@@ -45,12 +45,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_student'])) {
             header("Location: $host_name/pages/students/manage student.php?success=SSU");
         } else {
             // Redirect to the form with an error message
-            header("Location: manage student.php?error=ESU");
+            header("Location:  $host_name/pages/students/manage student.php?error=ESU");
         }
         $stmt->close();
     } else {
         // Redirect to the form with an error message
-        header("Location: manage student.php?error=ESU");
+        header("Location:  $host_name/pages/students/manage student.php?error=ESU");
     }
+}
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_subject_teacher'])) {
+    # code...
 }
 ?>

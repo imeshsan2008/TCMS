@@ -58,7 +58,7 @@ $subjects_result = $conn->query($sql_subjects);
             <input type="hidden" name="student_id" value="<?php echo htmlspecialchars($student['student_id']); ?>">
             <div class="form-group">
                 <label for="full_name">Full Name:</label>
-                <input type="text" class="form-control" id="full_name" name="full_name" value="<?php echo htmlspecialchars($student['full_name']); ?>" required>
+                <input type="text" class="form-control P_ENTER"  id="full_name" name="full_name" value="<?php echo htmlspecialchars($student['full_name']); ?>" required>
             </div>
             <div class="form-group">
                 <label for="gender">Gender:</label>
@@ -126,6 +126,13 @@ $subjects_result = $conn->query($sql_subjects);
 </section>
 
 <script>
+    var input = document.querySelector("input");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("update-student-submit-btn").click();
+  }
+});
     new Choices(document.querySelector(".choices-single"));
     new Choices(document.querySelector(".subjects"));
 
