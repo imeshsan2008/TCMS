@@ -54,7 +54,7 @@ if (isset($_POST['BAST'])) {
 
     // Execute the statement
     if ($stmt->execute() === TRUE) {
-        header("Location: add.php?success=SSTA");
+        header("Location: $host_name/pages/teachers&subject/add.php?success=SSTA");
     } else {
         header("Location: add.php?error=ESA");
     }
