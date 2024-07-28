@@ -88,7 +88,7 @@ history.replaceState(null, null, "?");
                <center>
                 <div class="alert alert-success alert-dismissible fade show alert_div" style="display: none;" id="error"
                     role="alert">
-Subject And Teacher Added Successfully
+Subject And Teacher Added Successfulls
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 
                 </div>
