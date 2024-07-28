@@ -65,186 +65,198 @@
     <section id="sb">
         <!-- NAVBAR -->
         <nav>
+
+            <!-- ========== Start error alerts ========== -->
+
+            <!-- ========== Start error alert subject & teacher ========== -->
             <?php if(isset($_GET['error'])&& $_GET['error']  == 'ESTA'): ?>
-               <center>
-                <div class="alert alert-danger alert-dismissible fade show alert_div" style="display: none;" id="error"
-                    role="alert">
+            <center>
+                <div class="alert alert-danger alert-dismissible fade show alert_div" style="display: none;" id="error" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     Error adding subject or teacher. Please try again.
                 </div>
             </center>
             <script>
-setTimeout(() => {
-$("#error").fadeIn();
-}, 0);setTimeout(() => {
-$("#error").fadeOut();
-
-}, 3000);
-history.replaceState(null, null, "?");
-
-        </script>
+            setTimeout(() => {
+                $("#error").fadeIn();
+            }, 0);
+            setTimeout(() => {
+                $("#error").fadeOut();
+            }, 3000);
+            history.replaceState(null, null, "?");
+            </script>
             <?php endif; ?>
-            <?php if(isset($_GET['success'])&& $_GET['success']  == 'SSTA'): ?>
-               <center>
-                <div class="alert alert-success alert-dismissible fade show alert_div" style="display: none;" id="error"
-                    role="alert">
-Subject And Teacher Added Successfulls
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <!-- ========== End error alert subject & teacher ========== -->
 
-                </div>
-            </center>
-            <script>
-setTimeout(() => {
-$("#error").fadeIn();
-}, 0);setTimeout(() => {
-$("#error").fadeOut();
-}, 3000);
-history.replaceState(null, null, "?");
-
-        </script>
-            <?php endif; ?>
-
-            <?php if(isset($_GET['success'])&& $_GET['success']  == 'SSA'): ?>
-               <center>
-                <div class="alert alert-success alert-dismissible fade show alert_div" style="display: none;" id="error"
-                    role="alert">
-Student Added Successfully
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
-                </div>
-            </center>
-            <script>
-setTimeout(() => {
-$("#error").fadeIn();
-}, 0);setTimeout(() => {
-$("#error").fadeOut();
-}, 3000);
-history.replaceState(null, null, "?");
-
-        </script>
-            <?php endif; ?>
-            
+            <!-- ========== Start error alert student ========== -->
             <?php if(isset($_GET['error'])&& $_GET['error']  == 'ESA'): ?>
-               <center>
-                <div class="alert alert-danger alert-dismissible fade show alert_div" style="display: none;" id="error"
-                    role="alert">
-                    Error adding Student. Please try again.                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
-                </div>
-            </center>
-            <script>
-setTimeout(() => {
-$("#error").fadeIn();
-}, 0);setTimeout(() => {
-$("#error").fadeOut();
-}, 3000);
-history.replaceState(null, null, "?");
-
-        </script>
-            <?php endif; ?>
-                 
-            <?php if(isset($_GET['error'])&& $_GET['error']  == 'ESU'): ?>
-               <center>
-                <div class="alert alert-danger alert-dismissible fade show alert_div" style="display: none;" id="error"
-                    role="alert">
-                    Error updating Student. Please try again.                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
-                </div>
-            </center>
-            <script>
-setTimeout(() => {
-$("#error").fadeIn();
-}, 0);setTimeout(() => {
-$("#error").fadeOut();
-}, 3000);
-history.replaceState(null, null, "?");
-
-        </script>
-            <?php endif; ?>
-        <?php if(isset($_GET['success'])&& $_GET['success']  == 'SSU'): ?>
-               <center>
-                <div class="alert alert-success alert-dismissible fade show alert_div" style="display: none;" id="error"
-                    role="alert">
-                    Student Updated Successfully               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
-                </div>
-            </center>
-            <script>
-setTimeout(() => {
-$("#error").fadeIn();
-}, 0);setTimeout(() => {
-$("#error").fadeOut();
-}, 3000);
-history.replaceState(null, null, "?");
-
-        </script>
-            <?php endif; ?>   
-        
-        
-        
-        
-        
-    
- <?php if(isset($_GET['success'])&& $_GET['success']  == 'SSD'): ?>
-               <center>
-                <div class="alert alert-success alert-dismissible fade show alert_div" style="display: none;" id="error"
-                    role="alert">
-                    Student Deleted Successfully               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
-                </div>
-            </center>
-            <script>
-setTimeout(() => {
-$("#error").fadeIn();
-}, 0);setTimeout(() => {
-$("#error").fadeOut();
-}, 3000);
-history.replaceState(null, null, "?");
-
-        </script>
-            <?php endif; ?>    
-     
- <?php if(isset($_GET['error'])&& $_GET['error']  == 'ESD'): ?>
-               <center>
-                <div class="alert alert-danger alert-dismissible fade show alert_div" style="display: none;" id="error"
-                    role="alert">
-                    Error deleting Student. Please try again.             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
-                </div>
-            </center>
-            <script>
-setTimeout(() => {
-$("#error").fadeIn();
-}, 0);setTimeout(() => {
-$("#error").fadeOut();
-}, 3000);
-history.replaceState(null, null, "?");
-
-        </script>
-            <?php endif; ?>       
-  
- <?php if(isset($_GET['error'])&& $_GET['error']  == 'NOSD'): ?>
-               <center>
-                <div class="alert alert-danger alert-dismissible fade show alert_div" style="display: none;" id="error"
-                    role="alert">
-                    No student data found.Please try again
+            <center>
+                <div class="alert alert-danger alert-dismissible fade show alert_div" style="display: none;" id="error" role="alert">
+                    Error adding Student. Please try again.
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
                 </div>
             </center>
             <script>
-setTimeout(() => {
-$("#error").fadeIn();
-}, 0);setTimeout(() => {
-$("#error").fadeOut();
-}, 3000);
-history.replaceState(null, null, "?");
+            setTimeout(() => {
+                $("#error").fadeIn();
+            }, 0);
+            setTimeout(() => {
+                $("#error").fadeOut();
+            }, 3000);
+            history.replaceState(null, null, "?");
+            </script>
+            <?php endif; ?>
+            <!-- ========== End error alert student ========== -->
 
-        </script>
-            <?php endif; ?>    </nav>     <!-- NAVBAR -->
+            <!-- ========== Start updating error alert student ========== -->
+            <?php if(isset($_GET['error'])&& $_GET['error']  == 'ESU'): ?>
+            <center>
+                <div class="alert alert-danger alert-dismissible fade show alert_div" style="display: none;" id="error" role="alert">
+                    Error updating Student. Please try again.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </center>
+            <script>
+            setTimeout(() => {
+                $("#error").fadeIn();
+            }, 0);
+            setTimeout(() => {
+                $("#error").fadeOut();
+            }, 3000);
+            history.replaceState(null, null, "?");
+            </script>
+            <?php endif; ?>
+            <!-- ========== End updating error alert student ========== -->
+
+            <!-- ========== Start error alert student delete ========== -->
+            <?php if(isset($_GET['error'])&& $_GET['error']  == 'ESD'): ?>
+            <center>
+                <div class="alert alert-danger alert-dismissible fade show alert_div" style="display: none;" id="error" role="alert">
+                    Error deleting Student. Please try again.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </center>
+            <script>
+            setTimeout(() => {
+                $("#error").fadeIn();
+            }, 0);
+            setTimeout(() => {
+                $("#error").fadeOut();
+            }, 3000);
+            history.replaceState(null, null, "?");
+            </script>
+            <?php endif; ?>
+            <!-- ========== End error alert student delete ========== -->
+
+            <!-- ========== Start error alert no student data ========== -->
+            <?php if(isset($_GET['error'])&& $_GET['error']  == 'NOSD'): ?>
+            <center>
+                <div class="alert alert-danger alert-dismissible fade show alert_div" style="display: none;" id="error" role="alert">
+                    No student data found. Please try again.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </center>
+            <script>
+            setTimeout(() => {
+                $("#error").fadeIn();
+            }, 0);
+            setTimeout(() => {
+                $("#error").fadeOut();
+            }, 3000);
+            history.replaceState(null, null, "?");
+            </script>
+            <?php endif; ?>
+            <!-- ========== End error alert no student data ========== -->
+
+            <!-- ========== End error alerts ========== -->
+
+            <!-- ========== Start success alerts ========== -->
+
+            <!-- ========== Start success alert subject & teacher ========== -->
+            <?php if(isset($_GET['success'])&& $_GET['success']  == 'SSTA'): ?>
+            <center>
+                <div class="alert alert-success alert-dismissible fade show alert_div" style="display: none;" id="error" role="alert">
+                    Subject And Teacher Added Successfully
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </center>
+            <script>
+            setTimeout(() => {
+                $("#error").fadeIn();
+            }, 0);
+            setTimeout(() => {
+                $("#error").fadeOut();
+            }, 3000);
+            history.replaceState(null, null, "?");
+            </script>
+            <?php endif; ?>
+            <!-- ========== End success alert subject & teacher ========== -->
+
+            <!-- ========== Start success alert student add ========== -->
+            <?php if(isset($_GET['success'])&& $_GET['success']  == 'SSA'): ?>
+            <center>
+                <div class="alert alert-success alert-dismissible fade show alert_div" style="display: none;" id="error" role="alert">
+                    Student Added Successfully
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </center>
+            <script>
+            setTimeout(() => {
+                $("#error").fadeIn();
+            }, 0);
+            setTimeout(() => {
+                $("#error").fadeOut();
+            }, 3000);
+            history.replaceState(null, null, "?");
+            </script>
+            <?php endif; ?>
+            <!-- ========== End success alert student add ========== -->
+
+            <!-- ========== Start success alert student update ========== -->
+            <?php if(isset($_GET['success'])&& $_GET['success']  == 'SSU'): ?>
+            <center>
+                <div class="alert alert-success alert-dismissible fade show alert_div" style="display: none;" id="error" role="alert">
+                    Student Updated Successfully
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </center>
+            <script>
+            setTimeout(() => {
+                $("#error").fadeIn();
+            }, 0);
+            setTimeout(() => {
+                $("#error").fadeOut();
+            }, 3000);
+            history.replaceState(null, null, "?");
+            </script>
+            <?php endif; ?>
+            <!-- ========== End success alert student update ========== -->
+
+            <!-- ========== Start success alert student delete ========== -->
+            <?php if(isset($_GET['success'])&& $_GET['success']  == 'SSD'): ?>
+            <center>
+                <div class="alert alert-success alert-dismissible fade show alert_div" style="display: none;" id="error" role="alert">
+                    Student Deleted Successfully
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </center>
+            <script>
+            setTimeout(() => {
+                $("#error").fadeIn();
+            }, 0);
+            setTimeout(() => {
+                $("#error").fadeOut();
+            }, 3000);
+            history.replaceState(null, null, "?");
+            </script>
+            <?php endif; ?>
+            <!-- ========== End success alert student delete ========== -->
+
+            <!-- ========== End success alerts ========== -->
+
+        </nav> <!-- NAVBAR -->
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 </body>
 
