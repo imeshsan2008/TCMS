@@ -49,7 +49,8 @@ if ($result->num_rows > 0) {
 #add-student-submit-btn{
     position: relative;
     left: 940px;
-}    </style>
+} 
+  </style>
 </head>
 <body>
 <?php include "../../include/sidebar.php"; ?>
@@ -124,7 +125,7 @@ if ($result->num_rows > 0) {
                     <?php endwhile; ?>
                     <option disabled value="">Select Subjects</option>
                 </select>
-                <input type="text" class="subjects_af_val" style="display:none;" name="subjects_af_val">
+                <input type="text" class="subjects_af_val" style="display:none;" id="subjects_af_val" name="subjects_af_val">
             </div>
             <br>
             <button type="submit" name="add_student" class="btn btn-primary" id="add-student-submit-btn">Submit</button>
@@ -133,6 +134,8 @@ if ($result->num_rows > 0) {
 </section>
 
 <script>
+
+
     new Choices(document.querySelector(".choices-single"));
     new Choices(document.querySelector(".subjects"));
 
@@ -177,7 +180,13 @@ if ($result->num_rows > 0) {
             console.warn('No options selected.');
         } else {
             subjects_af_val.value = selectedValues;
+            var subjectsText = document.getElementById('subjects_af_val');
+     var modifiedText = subjectsText.value.split(',').join(', ');
+
+
+     subjectsText.value=modifiedText;
         }
+ 
     }
 </script>
 

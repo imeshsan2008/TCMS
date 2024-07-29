@@ -18,7 +18,6 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +28,8 @@ $conn->close();
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
     <link rel="stylesheet" href="../../include/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../include/css/boot.css">
+
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css"/>
 
@@ -39,6 +39,12 @@ $conn->close();
 
     <title>TCMS - Tuition Class Management System</title>
 </head>
+<style>
+    .badge {
+        color: #fff;
+        background-color: red;
+    }
+</style>
 <body>
 
 <?php include "../../include/sidebar.php"; ?>
@@ -46,20 +52,19 @@ $conn->close();
 <!-- CONTENT -->
 <section id="content">
     <main>
-
-
         <!-- ========== Start Profile Section ========== -->
         <div class="container">
-        <a href="manage student.php"><i class="bx bxs-left-arrow-alt"></i> Back </a>
+            <a href="manage student.php"><i class="bx bxs-left-arrow-alt"></i> Back </a>
 
             <div class="row">
                 <?php foreach ($students as $student): ?>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Profile Picture">
+                        <img class="card-img-top" id="profile_photo">
                         <div class="card-body">
                             <h5 class="card-title"><?= $student['full_name'] ?></h5>
-                            <p class="card-text"><?= $student['full_name'] ?></p>
+                            <p class="card-text">
+                            <h1 class="badge" id="subjects_text" style="font-size:15px;"><?= $student['subjects_name'] ?></h1></p>
                         </div>
                     </div>
                 </div>
@@ -68,6 +73,7 @@ $conn->close();
                         <div class="card-body">
                             <h5 class="card-title">Profile Details</h5>
                             <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Student Id: </strong><?php echo $student_id_template; ?><?= $student['student_id'] ?></li>
                                 <li class="list-group-item"><strong>Gender:</strong> <?= $student['gender'] ?></li>
                                 <li class="list-group-item"><strong>Birth of Date:</strong> <?= $student['birth_date'] ?></li>
                                 <li class="list-group-item"><strong>Age:</strong> <?= $student['age'] ?></li>
@@ -77,7 +83,11 @@ $conn->close();
                                 <li class="list-group-item"><strong>Custodian's Name:</strong> <?= $student['custodian_name'] ?></li>
                                 <li class="list-group-item"><strong>Custodian’s Phone Number:</strong> <?= $student['custodian_phone'] ?></li>
                                 <li class="list-group-item"><strong>Custodian’s Whatsapp Number:</strong> <?= $student['custodian_whatsapp'] ?></li>
-                                <li class="list-group-item"><strong>Subjects:</strong> <?= $student['subjects_name'] ?></li>
+                                 <li class="list-group-item"><center style="display>:flex;">
+                            
+                               <a class="btn btn-info " href="update_student.php?student_id=<?= $student['student_id'] ?>"><i class="bx bx-edit"></i> Update</a>
+                            </center>
+                            //meke Update aka click karala update karata passe redirect aka mekatama enna hadanna
                             </ul>
                         </div>
                     </div>
@@ -96,6 +106,18 @@ $conn->close();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="../../include/js/script.js"></script>
+<script>
+    $(document).ready(function () {
+        <?php foreach ($students as $student): ?>
+        var gender = '<?= $student['gender'] ?>';
+        if (gender == "Female") {
+            $('#profile_photo').attr("src", "../../include/img/girl.png");
+        } else {
+            $('#profile_photo').attr("src", "../../include/img/boy.png");
+        }
+        <?php endforeach; ?>
+    });
+</script>
 
 </body>
 </html>

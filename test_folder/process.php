@@ -1,27 +1,20 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "tcms";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text"></p>
+    <script>
+       let num = 0;
+        let p = document.getElementById('text').innerHTML;
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Get selected item
-$selectedItem = $_POST['selected-item'];
-echo "Selected item ID: " . $selectedItem . "<br>";
-
-// Get new input fields
-if (isset($_POST['new-inputs'])) {
-    foreach ($_POST['new-inputs'] as $input) {
-        echo "New input: " . htmlspecialchars($input) . "<br>";
-    }
-}
-
-$conn->close();
-?>
+        while (num < 100) {
+            p=num;
+            num++;
+        }
+    </script>
+</body>
+</html>

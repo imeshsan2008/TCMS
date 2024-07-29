@@ -104,6 +104,7 @@
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="../../include/js/script.js"></script>
 <script>
+    
     $(document).ready(function() {
         var table = $('#studentTable').DataTable({
             paging: true,
@@ -132,7 +133,7 @@
                             student.gender,
                             student.custodian_phone,
                             '<a target="_blank" href="https://wa.me/94' + student.custodian_phone + '"><i class="bx bx-whatsapp"></i>' + student.custodian_phone + '</a>',
-                            student.subjects_name,
+                            '<td id="subjects_text">'+student.subjects_name+'</td>',
                             '<a class="btn btn-info btn-sm space" href="profile.php?student_id=' + student.student_id + '"><i class="bx bx-show"></i> View</a>' +
                             '<a class="btn btn-warning btn-sm space" href="update_student.php?student_id=' + student.student_id + '"><i class="bx bx-edit"></i> Update</a>' +
                             '<button class="btn btn-danger btn-sm space deleteBtn" data-id="' + student.id + '"><i class="bx bx-trash"></i> Delete</button>'
@@ -182,7 +183,6 @@
                 $(this).remove();
             });
         }
-
         // Search student
         $('#searchInput').on('keyup', function() {
             var search_value = $(this).val();
