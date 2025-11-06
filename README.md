@@ -1,1 +1,1 @@
-# tuition-class-management-system
+# tuition-class-management-system (Deprecated)
